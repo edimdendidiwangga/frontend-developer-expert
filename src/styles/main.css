@@ -1,0 +1,365 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+html {
+    box-sizing: border-box;
+}
+
+body {
+    background: #fff;
+    font-family: 'Poppins', sans-serif;
+    height: 100%;
+}
+
+.menu-toggle {
+    display: none;
+    width: 2.75rem;
+    height: 2.75rem;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+    color: #ffff;
+    font-size: 1.9rem;
+}
+
+.close-menu {
+    display: none;
+    width: 2.75rem;
+    height: 2.75rem;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+    color: #ffff;
+    font-size: 3rem;
+    z-index: 2;
+}
+
+.skip-link {
+    position: absolute;
+    top: -2.6rem;
+    left: 0;
+    text-decoration: none;
+    background-color: white;
+    color: black;
+    padding: 0.5rem;
+    z-index: 99;
+}
+
+.skip-link:focus {
+    top: 4rem;
+}
+
+.container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+header {
+    position: fixed;
+    left: 0;
+    right: 0;
+    background-color: #e79e4f;
+    height: 4rem;
+    z-index: 2;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+}
+
+header .navbar {
+    display: flex;
+    justify-content: space-around;
+    height: 100%;
+    align-items: center;
+}
+
+header .brand-link {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: x-large;
+}
+
+header .logo {
+    width: 2.5rem;
+    height: 2.5rem;
+    margin-right: 0.5rem;
+}
+
+header .logo img {
+    height: 100%; 
+    width: 100%;
+}
+
+.navbar a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    transition: color 0.2s ease-in-out;
+    text-decoration: none;
+    padding: 1rem 0.8rem;
+    font-family: 'Poppins', sans-serif;
+}
+
+.navbar ul {
+    display: flex;
+    list-style: none;
+    width: 30%;
+    justify-content: space-around;
+}
+
+.navbar a:focus,
+.navbar a:hover {
+    color: #734047;
+}
+
+/* Jumbotron */
+
+.hero {
+    position: relative;
+    display: flex;
+    align-items: center;
+    min-height: 23.75rem;
+    width: 100%;
+    text-align: center;
+}
+
+.hero .overlay {
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.7);
+    height: 100%;
+    width: 100%;
+    top: 0;
+}
+
+.hero img {
+    width: 100%;
+    height: 34.3rem;
+    object-fit: cover;
+    object-position: center;
+}
+
+.hero_inner {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero_title {
+    color: #fff;
+    font-weight: 500;
+    font-size: 2.2rem;
+}
+
+.hero_tagline {
+    color: #fff;
+    margin-top: 1rem;
+    font-size: 1.2rem;
+    font-weight: 300;
+}
+
+.title {
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+/* Content */
+.grid-wrapper { 
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(18.75rem, 1fr));
+    grid-gap: 1.5rem;
+    align-items: center;
+}
+
+.grid-wrapper .card {
+    border-radius: 0.5rem;
+    box-shadow: 2px 2px 6px 0px  rgba(0,0,0,0.3);
+}
+
+.card .card-img {
+    position: relative;
+    overflow: hidden;
+}
+
+.card .card-img img {
+    width:  100%;
+    height: 12.5rem;
+    object-fit: cover;
+    border-top-left-radius: 0.5rem;
+    border-top-right-radius: 0.5rem;
+}
+
+.card .card-img .card-label {
+    width: 6.25rem;
+    height: 2.5rem;
+    background-color: rgb(231, 158, 79, 0.7);
+    position: absolute;
+    top: 1.25rem;
+    font-family: 'Poppins', sans-serif;
+    color: #fff;
+    line-height: 40px;
+    text-align: center;
+}
+
+.card .card-content {
+    padding: 0.7rem 1.2rem 1.2rem;
+}
+
+.card .card-content h3 {
+    margin-bottom: 1rem;
+}
+
+.card .card-content p {
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.9rem;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+}
+
+.card .card-content .rate {
+    display: flex;
+    align-items: center;
+    font-size: 1.1rem;
+    font-weight: 500;
+    padding: 0.9rem 0;
+}
+
+.card .card-content .rate img {
+    margin-right: 5px;
+    width: 1rem;
+    height: 1rem;
+}
+
+.footer {
+    width: 100%;
+    height: 3.2rem;
+    margin-top: 6rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(231, 158, 79);;
+    color: #fff;
+}
+
+.footer h5 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    text-align: center;
+}
+
+/* tablet */
+@media (min-width: 768px) and (max-width: 1024px) {
+    header .navbar {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .navbar ul {
+      width: 40%;
+    }
+
+    .hero {
+        min-height: 8.5rem;
+        display: flex;
+        justify-content: center;
+    }
+
+    .menu-toggle {
+        display: none;
+    }
+
+    .close-menu {
+        display: none;
+    }
+  
+    .hero .hero_inner {
+        width: 80%;
+    }
+
+    .hero .hero_inner .hero_title {
+        line-height: 4rem;
+        font-size: 3rem;
+    }
+  
+    .hero .hero_inner .hero_tagline {
+        font-size: 1.6rem;
+    }
+}
+
+/* Mobiles (Potrait/Landscape) */
+@media (min-width: 320px) and (max-width: 767px) {
+
+    header .navbar {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .navbar ul {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 100%;
+      height: 100vh;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-evenly;
+      background-color: #734047;
+      font-size: 1.5rem;
+      z-index: 1;
+      transform: translateX(-100%);
+      transition: all 1s;
+      opacity: 0;
+    }
+  
+    .navbar ul.slide {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  
+    .menu-toggle {
+      display: flex;
+    }
+  
+    .hero {
+      min-height: 8.5rem;
+      display: flex;
+      justify-content: center;
+    }
+
+    .hero .hero_inner {
+        width: 80%;
+    }
+
+    .hero .hero_inner .hero_title {
+        line-height: 3.5rem;
+        font-size: 2.2rem;
+    }
+  
+    .hero .hero_inner .hero_tagline {
+        font-size: 1.2rem;
+    }
+
+    .grid-wrapper {
+        grid-template-columns: repeat(auto-fill, minmax(16.5rem, 1fr));
+    }
+}
