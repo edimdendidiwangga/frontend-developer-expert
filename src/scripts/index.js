@@ -4,31 +4,31 @@ import data from '../DATA.json';
 
 // Sidebar
 const menuToggle = document.querySelector('.menu-toggle');
-const menuClose = document.querySelector('.close-menu')
+const menuClose = document.querySelector('.close-menu');
 const nav = document.querySelector('nav ul');
 
-menuToggle.addEventListener('click', function () {
-    nav.classList.toggle('slide');
-    setTimeout(() => {
-        menuClose.style.display = "flex";
-    }, 500);
+menuToggle.addEventListener('click', () => {
+  nav.classList.toggle('slide');
+  setTimeout(() => {
+    menuClose.style.display = 'flex';
+  }, 500);
 });
 
-menuClose.addEventListener('click', function () {
-    nav.classList.toggle('slide');
-    menuClose.style.display = "none"
+menuClose.addEventListener('click', () => {
+  nav.classList.toggle('slide');
+  menuClose.style.display = 'none';
 });
 
-// List Content 
-const restaurantListElement = document.querySelector("restaurant-list");
+// List Content
+const restaurantListElement = document.querySelector('restaurant-list');
 
-restaurantListElement.setAttribute("class", "grid-wrapper container");
-restaurantListElement.innerHTML = "";
-data.restaurants.forEach(restaurant => {
-    const list = document.createElement("article");
-    list.className = "card";
-    list.setAttribute("tabindex", "0");
-    list.innerHTML = `
+restaurantListElement.setAttribute('class', 'grid-wrapper container');
+restaurantListElement.innerHTML = '';
+data.restaurants.forEach((restaurant) => {
+  const list = document.createElement('article');
+  list.className = 'card';
+  list.setAttribute('tabindex', '0');
+  list.innerHTML = `
         <div class="card-img">
             <img src=${restaurant.pictureId} alt="Poster">
             <div class="card-label">
@@ -46,5 +46,5 @@ data.restaurants.forEach(restaurant => {
             </div>
         </div>
     `;
-    restaurantListElement.appendChild(list);
-})
+  restaurantListElement.appendChild(list);
+});
