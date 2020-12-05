@@ -223,8 +223,14 @@ header .logo img {
     padding: 0.7rem 1.2rem 1.2rem;
 }
 
-.card .card-content h3 {
+.card .card-content .name {
+    text-decoration: none;
+}
+
+.card .card-content .name h4 {
     margin-bottom: 1rem;
+    color: #000;
+    cursor: pointer;
 }
 
 .card .card-content p {
@@ -267,99 +273,3 @@ header .logo img {
     text-align: center;
 }
 
-/* tablet */
-@media (min-width: 768px) and (max-width: 1024px) {
-    header .navbar {
-        display: flex;
-        justify-content: space-between;
-    }
-
-    .navbar ul {
-      width: 40%;
-    }
-
-    .hero {
-        min-height: 8.5rem;
-        display: flex;
-        justify-content: center;
-    }
-
-    .menu-toggle {
-        display: none;
-    }
-
-    .close-menu {
-        display: none;
-    }
-  
-    .hero .hero_inner {
-        width: 80%;
-    }
-
-    .hero .hero_inner .hero_title {
-        line-height: 4rem;
-        font-size: 3rem;
-    }
-  
-    .hero .hero_inner .hero_tagline {
-        font-size: 1.6rem;
-    }
-}
-
-/* Mobiles (Potrait/Landscape) */
-@media (min-width: 320px) and (max-width: 767px) {
-
-    header .navbar {
-        display: flex;
-        justify-content: space-between;
-    }
-
-    .navbar ul {
-      position: absolute;
-      top: 0;
-      right: 0;
-      width: 100%;
-      height: 100vh;
-      flex-direction: column;
-      align-items: center;
-      justify-content: space-evenly;
-      background-color: #734047;
-      font-size: 1.5rem;
-      z-index: 1;
-      transform: translateX(-100%);
-      transition: all 1s;
-      opacity: 0;
-    }
-  
-    .navbar ul.slide {
-      opacity: 1;
-      transform: translateX(0);
-    }
-  
-    .menu-toggle {
-      display: flex;
-    }
-  
-    .hero {
-      min-height: 8.5rem;
-      display: flex;
-      justify-content: center;
-    }
-
-    .hero .hero_inner {
-        width: 80%;
-    }
-
-    .hero .hero_inner .hero_title {
-        line-height: 3.5rem;
-        font-size: 2.2rem;
-    }
-  
-    .hero .hero_inner .hero_tagline {
-        font-size: 1.2rem;
-    }
-
-    .grid-wrapper {
-        grid-template-columns: repeat(auto-fill, minmax(16.5rem, 1fr));
-    }
-}
