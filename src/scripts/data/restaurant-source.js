@@ -32,7 +32,7 @@ class RestaurantSource {
       const response = await fetch(API_ENDPOINT.IMAGE(size, pictureId));
       return response.url;
     } catch (error) {
-      return 'images/heros/hero-image_2.jpg';
+      return 'images/heros/hero-image_4.jpg';
     }
   }
 }
