@@ -4,15 +4,16 @@ import '../styles/responsive.css';
 import App from './views/app';
 
 const app = new App({
+  buttonOpenNav: document.querySelector('.menu-toggle'),
+  buttonCloseNav: document.querySelector('.close-menu'),
+  drawer: document.querySelector('.navbar'),
   content: document.querySelector('#mainContent'),
 });
 
-window.addEventListener('DOMContentLoaded', () => {
-  window.addEventListener('hashchange', () => {
-    app.renderPage();
-  });
+window.addEventListener('hashchange', () => {
+  app.renderPage();
+});
 
-  window.addEventListener('load', () => {
-    app.renderPage();
-  });
+window.addEventListener('load', () => {
+  app.renderPage();
 });
