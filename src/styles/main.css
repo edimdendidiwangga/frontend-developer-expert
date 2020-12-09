@@ -70,6 +70,10 @@ body {
     margin-right: auto;
 }
 
+.main-content {
+    min-height: calc(100vh - 14.5rem);
+}
+
 .w-space {
     width: 75%;
 }
@@ -234,12 +238,12 @@ header .logo img {
 
 .card .card-content a {
     text-decoration: none;
+    cursor: pointer;
 }
 
 .card .card-content .card-title {
     margin-bottom: 1rem;
     color: #000;
-    cursor: pointer;
     text-align: center;
 }
 
@@ -274,6 +278,12 @@ header .logo img {
     flex-direction: row;
     align-items: flex-start;
     justify-content: space-between;
+}
+
+.centering {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .align-center {
@@ -420,18 +430,33 @@ hr.style-one {
 }
 
 .review-content .review-date {
-    font-size: 0.625rem;
+    font-size: 0.6rem;
     font-style: italic;
 }
 
-.heart {
-    fill: red;
+.favorite-button {
     position: absolute;
     bottom: 2rem;
     right: 1.5rem;
+    background-color: Transparent;
+    background-repeat:no-repeat;
+    border: none;
+    cursor:pointer;
+    outline:none;
+}
+
+.favorite-button .heart {
     width: 2rem;
     cursor: pointer;
     animation: pulse 1s ease infinite;
+}
+
+.favorite-button.favorited .heart {
+    fill: red;
+}
+
+.favorite-button.unfavorited .heart {
+    fill: white;
 }
   
 @keyframes pulse {

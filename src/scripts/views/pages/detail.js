@@ -1,6 +1,8 @@
 import UrlParser from '../../routes/url-parser';
 import RestaurantSource from '../../data/restaurant-source';
+import FavoriteRestaurantIdb from '../../data/favorite-restaurant-idb';
 import TemplateCreator from '../templates/template-creator';
+import FavoriteButton from '../../utils/favorite-button';
 
 const Detail = {
   async render() {
@@ -16,8 +18,13 @@ const Detail = {
     try {
       const restaurant = await RestaurantSource.detailRestaurant(url.id);
       restaurantContainer.innerHTML = TemplateCreator.restaurantDetail(restaurant);
-      const cardImage = document.querySelector('#picture-one');
-      cardImage.innerHTML += TemplateCreator.likeRestaurantButton();
+
+      const favoriteButon = document.querySelector('.favorite-button');
+      favoriteButon.innerHTML += TemplateCreator.likeRestaurantButton();
+      new FavoriteButton().init({
+        restaurant,
+        FavoriteRestaurant: FavoriteRestaurantIdb,
+      });
     } catch (error) {
       // console.log(`Error: ${error}`);
     }

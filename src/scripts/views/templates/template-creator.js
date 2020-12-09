@@ -30,7 +30,7 @@ const TemplateCreator = {
     return `
         <div class="card">
             <div class="card-img">
-                <div id="picture-one"></div>
+                <button type="button" class="favorite-button"></button>
                 <img class="img-lg" src="${API_ENDPOINT.IMAGE(restaurant.pictureId, 'large')}" alt="${restaurant.name}" />
             </div>
             <div class="card-content">
@@ -104,6 +104,14 @@ const TemplateCreator = {
             <path d="M23.6,0c-3.4,0-6.3,2.7-7.6,5.6C14.7,2.7,11.8,0,8.4,0C3.8,0,0,3.8,0,8.4c0,9.4,9.5,11.9,16,21.2
             c6.1-9.3,16-12.1,16-21.2C32,3.8,28.2,0,23.6,0z"/>
         </svg> 
+    `;
+  },
+
+  empty(msg) {
+    return `
+        <div class="centering empty-container">
+            <h3 class="text-center">${msg}</h3>
+        </div>
     `;
   },
 };
