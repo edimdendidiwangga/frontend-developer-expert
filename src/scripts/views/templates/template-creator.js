@@ -5,7 +5,7 @@ const TemplateCreator = {
     return `
         <article class="card" tabindex="0">
             <div class="card-img">
-                <img src="${API_ENDPOINT.IMAGE(restaurant.pictureId, 'small')}" alt="${restaurant.name || '-'}">
+                <img src="${API_ENDPOINT.IMAGE(restaurant.pictureId, 'small')}" alt="${restaurant.name || '-'}" crossorigin="anonymous" />
                 <div class="card-label">
                     ${restaurant.city}
                 </div
@@ -16,7 +16,7 @@ const TemplateCreator = {
                 </a>
                 <p class="elipsis">${restaurant.description}</p>                
                 <div class="rate">
-                    <img src="images/icon/star.svg" alt="rating">
+                    <img src="images/icon/star.svg" alt="rating" crossorigin="anonymous">
                     <span>
                         ${restaurant.rating}
                     </span>
@@ -31,14 +31,14 @@ const TemplateCreator = {
         <div class="card">
             <div class="card-img">
                 <button type="button" class="favorite-button"></button>
-                <img class="img-lg" src="${API_ENDPOINT.IMAGE(restaurant.pictureId, 'large')}" alt="${restaurant.name}" />
+                <img class="img-lg" src="${API_ENDPOINT.IMAGE(restaurant.pictureId, 'large')}" alt="${restaurant.name}" crossorigin="anonymous" />
             </div>
             <div class="card-content">
                 <h2 class="card-title">${restaurant.name}</h2>
                 <p>${restaurant.description}</p>
                 <div class="flex-row-between align-center">
                     <div class="rate">
-                        <img src="images/icon/star.svg" alt="rating">
+                        <img src="images/icon/star.svg" alt="rating" crossorigin="anonymous">
                         <span>
                             ${restaurant.rating}
                         </span>
@@ -73,7 +73,7 @@ const TemplateCreator = {
                 <div class="review-container">
                     ${restaurant.customerReviews.map((review) => (`
                         <div class="review-item">
-                            <img class="i-user" src="images/icon/user.svg" alt="rating">
+                            <img class="i-user" src="images/icon/user.svg" alt="rating" crossorigin="anonymous">
                             <div class="review-content">
                                 <p class="review-name">${review.name}</p>
                                 <p class="review-text">${review.review}</p>
@@ -89,7 +89,7 @@ const TemplateCreator = {
 
   jumbotronBanner() {
     return `
-        <img src="images/heros/hero-image_4.jpg" alt="jumbotron">
+        <img src="images/heros/hero-image_4.jpg" alt="jumbotron" crossorigin="anonymous">
         <div class="overlay"></div>
         <div class="hero_inner">
             <h1 class="hero_title">FoodMon Go Apps</h1>

@@ -29,17 +29,17 @@ const CacheHelper = {
   async _fetchRequest(request) {
     const response = await fetch(request);
 
-    if (!response || response.status !== 200) {
-      return response;
+    const responseCache = await this._addCache(request, response);
+    if (responseCache) {
+      return responseCache;
     }
-
-    await this._addCache(request);
     return response;
   },
 
-  async _addCache(request) {
+  async _addCache(request, response) {
     const cache = await this._openCache();
-    cache.add(request);
+    cache.put(request, response.clone());
+    return response;
   },
 };
 
