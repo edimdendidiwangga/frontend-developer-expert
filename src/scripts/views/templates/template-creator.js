@@ -11,7 +11,7 @@ const TemplateCreator = {
                 </div
             </div>
             <div class="card-content">
-                <a href="#/detail/${restaurant.id}">
+                <a class="link" href="#/detail/${restaurant.id}">
                     <h4 class="card-title">${restaurant.name || '-'}</h4>
                 </a>
                 <p class="elipsis">${restaurant.description}</p>                

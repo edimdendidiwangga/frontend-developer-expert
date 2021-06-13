@@ -5,7 +5,7 @@ const Home = {
   async render() {
     return `
         <section class="hero" id="jumbotron"></section>
-        <section class="main-content">
+        <section id="main-content" class="main-content">
             <h1 class="title">Explore Restaurant</h1>
             <restaurant-list class="grid-wrapper container"></restaurant-list>
         </section>

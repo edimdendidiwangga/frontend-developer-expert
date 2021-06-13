@@ -15,19 +15,15 @@ const Detail = {
     const url = UrlParser.parseActiveUrlWithoutCombiner();
     const restaurantContainer = document.querySelector('#restaurant');
 
-    try {
-      const restaurant = await RestaurantSource.detailRestaurant(url.id);
-      restaurantContainer.innerHTML = TemplateCreator.restaurantDetail(restaurant);
+    const restaurant = await RestaurantSource.detailRestaurant(url.id);
+    restaurantContainer.innerHTML = TemplateCreator.restaurantDetail(restaurant);
 
-      const favoriteButon = document.querySelector('.favorite-button');
-      favoriteButon.innerHTML += TemplateCreator.likeRestaurantButton();
-      new FavoriteButton().init({
-        restaurant,
-        FavoriteRestaurant: FavoriteRestaurantIdb,
-      });
-    } catch (error) {
-      // console.log(`Error: ${error}`);
-    }
+    const favoriteButon = document.querySelector('.favorite-button');
+    favoriteButon.innerHTML += TemplateCreator.likeRestaurantButton();
+    new FavoriteButton().init({
+      restaurant,
+      FavoriteRestaurant: FavoriteRestaurantIdb,
+    });
   },
 };
 
