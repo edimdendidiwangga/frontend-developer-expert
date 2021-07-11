@@ -2,7 +2,7 @@ class FavoriteButton {
   async init({ restaurant, FavoriteRestaurant }) {
     this._restaurant = restaurant;
     this._FavoriteRestaurant = FavoriteRestaurant;
-    this._button = document.querySelector('.favorite-button');
+    this._button = await document.querySelector('.favorite-button');
     this.favorited = await this._checkButton();
     this._initButton();
   }
@@ -50,10 +50,12 @@ class FavoriteButton {
 
   _showUnfavoriteButton() {
     this._button.className = 'favorite-button unfavorited';
+    this._button.setAttribute('aria-label', 'Like this Restaurant');
   }
 
   _showFavoriteButton() {
     this._button.className = 'favorite-button favorited';
+    this._button.setAttribute('aria-label', 'Unlike this Restaurant');
   }
 }
 
