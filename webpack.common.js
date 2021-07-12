@@ -14,6 +14,29 @@ module.exports = {
     path: path.resolve(__dirname, 'dist'),
     filename: 'bundle.js',
   },
+  optimization: {
+    splitChunks: {
+      chunks: 'all',
+      minSize: 20000,
+      maxSize: 70000,
+      minChunks: 1,
+      maxAsyncRequests: 30,
+      maxInitialRequests: 30,
+      automaticNameDelimiter: '~',
+      enforceSizeThreshold: 50000,
+      cacheGroups: {
+        defaultVendors: {
+          test: /[\\/]node_modules[\\/]/,
+          priority: -10,
+        },
+        default: {
+          minChunks: 2,
+          priority: -20,
+          reuseExistingChunk: true,
+        },
+      },
+    },
+  },
   module: {
     rules: [
       {
@@ -24,6 +47,32 @@ module.exports = {
           },
           {
             loader: 'css-loader',
+          },
+        ],
+      },
+      {
+        test: /\.(jpg|png|svg)$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[name].[ext]',
+              outputPath: 'img/',
+              publicPath: 'img/',
+            },
+          },
+        ],
+      },
+      {
+        test: /\.(svg|eot|woff|ttf|svg|woff2)$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[path][name].[ext]',
+              outputPath: 'font/',
+              publicPath: 'font/',
+            },
           },
         ],
       },
