@@ -5,7 +5,7 @@ const TemplateCreator = {
     return `
         <article class="card" tabindex="0">
             <div class="card-img">
-                <img src="${API_ENDPOINT.IMAGE(restaurant.pictureId, 'small')}" alt="${restaurant.name || '-'}" crossorigin="anonymous" />
+                <img class="lazyload" src="${API_ENDPOINT.IMAGE(restaurant.pictureId, 'small')}" alt="${restaurant.name || '-'}" crossorigin="anonymous" />
                 <div class="card-label">
                     ${restaurant.city}
                 </div
@@ -31,7 +31,7 @@ const TemplateCreator = {
         <div class="card">
             <div class="card-img">
                 <button type="button" class="favorite-button"></button>
-                <img class="img-lg" src="${API_ENDPOINT.IMAGE(restaurant.pictureId, 'large')}" alt="${restaurant.name}" crossorigin="anonymous" />
+                <img class="img-lg lazyload" src="${API_ENDPOINT.IMAGE(restaurant.pictureId, 'large')}" alt="${restaurant.name}" crossorigin="anonymous" />
             </div>
             <div class="card-content">
                 <h2 class="card-title">${restaurant.name}</h2>
@@ -89,7 +89,7 @@ const TemplateCreator = {
 
   jumbotronBanner() {
     return `
-        <img src="images/heros/hero-image_4.jpg" alt="jumbotron" crossorigin="anonymous">
+        <img class="lazyload" src="images/heros/hero-image_4.jpg" alt="jumbotron" crossorigin="anonymous">
         <div class="overlay"></div>
         <div class="hero_inner">
             <h1 class="hero_title">FoodMon Go Apps</h1>
