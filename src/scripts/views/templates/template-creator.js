@@ -5,7 +5,11 @@ const TemplateCreator = {
     return `
         <article class="card" tabindex="0">
             <div class="card-img">
-                <img class="lazyload" src="${API_ENDPOINT.IMAGE(restaurant.pictureId, 'small')}" alt="${restaurant.name || '-'}" crossorigin="anonymous" />
+                <picture>
+                    <source type="image/webp" data-srcset="${API_ENDPOINT.IMAGE(restaurant.pictureId, 'small')}" class="post-item__thumbnail lazyload">
+                    <img class="lazyload" data-src="${API_ENDPOINT.IMAGE(restaurant.pictureId, 'small')}" alt="${restaurant.name || '-'}" crossorigin="anonymous" />
+                </picture>
+                
                 <div class="card-label">
                     ${restaurant.city}
                 </div
@@ -31,7 +35,10 @@ const TemplateCreator = {
         <div class="card">
             <div class="card-img">
                 <button type="button" class="favorite-button"></button>
-                <img class="img-lg lazyload" src="${API_ENDPOINT.IMAGE(restaurant.pictureId, 'large')}" alt="${restaurant.name}" crossorigin="anonymous" />
+                <picture>
+                    <source type="image/webp" srcset="${API_ENDPOINT.IMAGE(restaurant.pictureId, 'large')}">
+                    <img class="img-lg lazyload" src="${API_ENDPOINT.IMAGE(restaurant.pictureId, 'large')}" alt="${restaurant.name}" crossorigin="anonymous" />
+                </picture>
             </div>
             <div class="card-content">
                 <h2 class="card-title">${restaurant.name}</h2>
@@ -89,7 +96,10 @@ const TemplateCreator = {
 
   jumbotronBanner() {
     return `
-        <img class="lazyload" src="images/heros/hero-image_4.jpg" alt="jumbotron" crossorigin="anonymous">
+        <picture>
+          <source media="(max-width: 600px)" type="image/jpeg" srcset="images/heros/hero-image_4-small.jpg">
+          <img src="images/heros/hero-image_4-large.jpg" alt="jumbotron" crossorigin="anonymous"></img>
+        </picture>
         <div class="overlay"></div>
         <div class="hero_inner">
             <h1 class="hero_title">FoodMon Go Apps</h1>
