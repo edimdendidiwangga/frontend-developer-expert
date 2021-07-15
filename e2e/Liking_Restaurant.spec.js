@@ -21,9 +21,6 @@ Scenario('Liking restaurant', async ({ I }) => {
   const firstRestaurantTitle = await I.grabTextFrom(firstRestaurant);
   I.click(locate('.card-content a.link').first());
 
-  const detailUrl = await I.grabAttributeFrom(locate('.card-content a.link').first(), 'href');
-  I.amOnPage(detailUrl);
-
   I.seeElement('.favorite-button');
   I.click('.favorite-button');
 
@@ -42,9 +39,6 @@ Scenario('Unliking restaurant', async ({ I }) => {
   const firstRestaurant = locate('.card-content a.link').first();
   I.click(firstRestaurant);
 
-  const detailUrl = await I.grabAttributeFrom(locate('.card-content a.link').first(), 'href');
-  I.amOnPage(detailUrl);
-
   I.seeElement('.favorite-button');
   I.click('.favorite-button');
 
@@ -52,8 +46,6 @@ Scenario('Unliking restaurant', async ({ I }) => {
   I.seeElement('.card-content');
 
   I.click(firstRestaurant);
-
-  I.amOnPage(detailUrl);
 
   I.seeElement('.favorite-button');
   I.click('.favorite-button');
