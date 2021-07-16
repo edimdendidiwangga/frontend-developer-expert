@@ -16,7 +16,7 @@ const TemplateCreator = {
             </div>
             <div class="card-content">
                 <a class="link" href="#/detail/${restaurant.id}">
-                    <h4 class="card-title">${restaurant.name || '-'}</h4>
+                    <h2 class="card-title">${restaurant.name || '-'}</h4>
                 </a>
                 <p class="elipsis">${restaurant.description}</p>                
                 <div class="rate">
@@ -41,7 +41,7 @@ const TemplateCreator = {
                 </picture>
             </div>
             <div class="card-content">
-                <h2 class="card-title">${restaurant.name}</h2>
+                <h1 class="card-title">${restaurant.name}</h2>
                 <p>${restaurant.description}</p>
                 <div class="flex-row-between align-center">
                     <div class="rate">
@@ -54,7 +54,7 @@ const TemplateCreator = {
                 </div>
                 
                 <hr class="style-one" />
-                <h3 class="card-title text-center">Kategori Menu</h3>
+                <h1 class="card-title text-center">Kategori Menu</h3>
                 <ul class="tags center">
                     ${restaurant.categories.map((category) => `<li class="tag-item">${category.name}</li>`).join('')}
                 </ul>
@@ -62,13 +62,13 @@ const TemplateCreator = {
                 <hr class="style-one" />
                 <div class="flex-row-between">
                     <div class="list-container">
-                        <h3 class="card-title text-center">Drinks</h3>
+                        <h2 class="card-title text-center">Drinks</h3>
                         <ul class="list-group">
                             ${restaurant.menus.drinks.map((menu) => `<li class="list-group-item">${menu.name}</li>`).join('')}
                         </ul>
                     </div>
                     <div class="list-container">
-                        <h3 class="card-title text-center">Foods</h3>
+                        <h2 class="card-title text-center">Foods</h3>
                         <ul class="list-group">
                             ${restaurant.menus.foods.map((menu) => `<li class="list-group-item">${menu.name}</li>`).join('')}
                         </ul>
@@ -76,7 +76,7 @@ const TemplateCreator = {
                 </div>
 
                 <hr class="style-one" />
-                <h3 class="card-title text-center">Reviews</h3>
+                <h1 class="card-title text-center">Reviews</h3>
                 <div class="review-container">
                     ${restaurant.customerReviews.map((review) => (`
                         <div class="review-item">

@@ -1,6 +1,9 @@
 import 'regenerator-runtime'; /* for async await transpile */
+import '../styles/fonts.css';
 import '../styles/main.css';
 import '../styles/responsive.css';
+import 'font-awesome/css/font-awesome.css';
+
 import App from './views/app';
 import swRegister from './utils/sw-register';
 import 'lazysizes';
@@ -15,9 +18,9 @@ const app = new App({
 
 window.addEventListener('hashchange', () => {
   app.renderPage();
-});
+}, { passive: true });
 
 window.addEventListener('load', () => {
   app.renderPage();
   swRegister();
-});
+}, { passive: true });

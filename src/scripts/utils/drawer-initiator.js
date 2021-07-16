@@ -4,15 +4,15 @@ const DrawerInitiator = {
   }) {
     buttonOpen.addEventListener('click', (event) => {
       this._toggleDrawer(event, drawer);
-    });
+    }, { passive: true });
 
     buttonClose.addEventListener('click', (event) => {
       this._closeDrawer(event, drawer);
-    });
+    }, { passive: true });
 
     content.addEventListener('click', (event) => {
       this._closeDrawer(event, drawer);
-    });
+    }, { passive: true });
   },
 
   _toggleDrawer(event, drawer) {

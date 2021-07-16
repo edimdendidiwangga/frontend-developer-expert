@@ -15,7 +15,7 @@ class FavoriteButton {
       } else {
         await this._favorite();
       }
-    });
+    }, { passive: true });
   }
 
   async _checkButton() {
